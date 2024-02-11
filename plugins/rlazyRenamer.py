@@ -40,7 +40,7 @@ import humanize
 from info import *
 
 
-@Client.on_message( filters.private & (filters.document | filters.audio | filters.video))
+@Client.on_message( filters.private & (filters.document | filters.audio | filters.video) & filters.user(ADMINS))
 async def rename_start(client, message):
     if (LAZY_MODE==True):
         if message.from_user.id in ADMINS :

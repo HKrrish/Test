@@ -47,7 +47,7 @@ async def echo(client, message):
         except Exception as error:
             print(error)
     if not message.from_user:
-        return await message.reply_text("What the hell is this 🤐")
+        return await message.reply_text("What is this! 🤐")
 
     logger.info(message.from_user)
     url = message.text
@@ -113,7 +113,7 @@ async def echo(client, message):
         await message.edit("Failed to fetch your data from database!")
         return
     upload_as_doc = user_data.get("upload_as_doc", False)
-    upload_type = f" {'🎥 ᴠɪᴅᴇᴏ' if upload_as_doc else '🗃️ ғɪʟᴇ'}"
+    upload_type = f" {'🎥 ᴠɪᴅᴇᴏ' if upload_as_doc else '🗃️ File'}"
     ######################## 
     
     if HTTP_PROXY != "":
@@ -236,13 +236,13 @@ async def echo(client, message):
                     cb_string = "{}|{}|{}|{}".format("audio", "320k", "mp3", randem)
                     inline_keyboard.append([
                         InlineKeyboardButton(
-                            "🎵 ᴍᴘ𝟹 " + "(" + "64 ᴋʙᴘs" + ")", callback_data=cb_string_64.encode("UTF-8")),
+                            "🎵 Mp3 " + "(" + "64 ᴋʙᴘs" + ")", callback_data=cb_string_64.encode("UTF-8")),
                         InlineKeyboardButton(
-                            "🎵 ᴍᴘ𝟹 " + "(" + "128 ᴋʙᴘs" + ")", callback_data=cb_string_128.encode("UTF-8"))
+                            "🎵 Mp3 " + "(" + "128 ᴋʙᴘs" + ")", callback_data=cb_string_128.encode("UTF-8"))
                     ])
                     inline_keyboard.append([
                         InlineKeyboardButton(
-                            "🎵 ᴍᴘ𝟹 " + "(" + "320 ᴋʙᴘs" + ")", callback_data=cb_string.encode("UTF-8"))
+                            "🎵 Mp3 " + "(" + "320 ᴋʙᴘs" + ")", callback_data=cb_string.encode("UTF-8"))
                     ])
                     inline_keyboard.append([                 
                         InlineKeyboardButton(
@@ -257,7 +257,7 @@ async def echo(client, message):
                     "video", format_id, format_ext, randem)
                 inline_keyboard.append([
                     InlineKeyboardButton(
-                        "🎬 sᴍᴇᴅɪᴀ",
+                        "🎬 SMedia",
                         callback_data=(cb_string_video).encode("UTF-8")
                     )
                 ])
@@ -268,7 +268,7 @@ async def echo(client, message):
                     "video", format_id, format_ext)
                 inline_keyboard.append([
                     InlineKeyboardButton(
-                        "🎥 ᴠɪᴅᴇᴏ",
+                        "🎥 Video",
                         callback_data=(cb_string_video).encode("UTF-8")
                     )
                 ])
@@ -277,7 +277,7 @@ async def echo(client, message):
             await chk.delete()
             await client.send_message(
                 chat_id=message.chat.id,
-                text= f"⏯<b>File Name:</b> {namee}\n\n🧬<b>File Size:</b> {size} \n<b>⩙ Upload Type:</b> {upload_type}" + script.FORMAT_SELECTION.format(Thumbnail) + "\n" + script.SET_CUSTOM_USERNAME_PASSWORD,
+                text= f"⏯<b>File Name:</b> {namee}\n\n<b>File Size:</b> {size} \n<b>⩙ Upload Type:</b> {upload_type}" + script.FORMAT_SELECTION.format(Thumbnail) + "\n" + script.SET_CUSTOM_USERNAME_PASSWORD,
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML,
                 reply_to_message_id=message.id
@@ -291,7 +291,7 @@ async def echo(client, message):
                 "video", "OFL", "ENON")
             inline_keyboard.append([
                 InlineKeyboardButton(
-                    "🎬 ᴍᴇᴅɪᴀ",
+                    "🎬 Media",
                     callback_data=(cb_string_video).encode("UTF-8")
                 )
             ])
@@ -301,7 +301,7 @@ async def echo(client, message):
             await chk.delete(True)
             await client.send_message(
                 chat_id=message.chat.id,
-                text=f"⏯<b>File 🎥:</b> {namee}\n\n🧬<b>File Size:</b> {size}",
+                text=f"⏯<b>File 🎥:</b> {namee}\n\n<b>File Size:</b> {size}",
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML,
                 reply_to_message_id=message.id

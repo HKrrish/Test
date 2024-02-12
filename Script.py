@@ -34,9 +34,10 @@ Here You Can Find Episodes of Many Indian **Mythological** Serials In HD Qualiti
 
     SLOW_URL_DECED = "Gosh that seems to be a very slow URL. Since you were screwing my home, I am in no mood to download this file. Please provide me fast download url 👊"
 
-    HELP_TXT = """**Help Message**
+    HELP_TXT = """**--Help Message--**
 
-◈ Searching Very Easy, You Have to Search With Proper Format !! ✨
+◈ **Searching Very Easy, You Have to Search With Proper Format !!** ✨
+◈ Just add me in your group and start searching!
 
 • RadhaKrishn S1 E1 ✅
 • Mahabharat S01E01 ✅
@@ -72,93 +73,93 @@ This bot can Provide You Many Indian Mythology show on your request.
 **Thank You** 😇.    
 """
 
-    MANUELFILTER_TXT = """Help: <b>Filters</b>
+    MANUELFILTER_TXT = """Help: **--Filters--**
 
 - Filter is the feature were users can set automated replies for a particular keyword and LazyPriness will respond whenever that keyword hits the message
 
-<b>NOTE:</b>
+**NOTE:**
 1. BOT should have admin privillage.
 2. Only admins can add filters in a chat.
 3. Alert buttons have a limit of 64 characters.
 
-<b>Commands and Usage:</b>
-• /filter - <code>add a filter in chat</code>
-• /filters - <code>list all the filters of a chat</code>
-• /del - <code>delete a specific filter in chat</code>
-• /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
-    BUTTON_TXT = """Help: <b>Buttons</b>
+**Commands and Usage:**
+• /filter - `add a filter in chat`
+• /filters - `list all the filters of a chat`
+• /del - |delete a specific filter in chat`
+• /delall - `delete the whole filters in a chat (chat owner only)`"""
+    BUTTON_TXT = """Help: **Buttons**
 
 - Supports both url and alert inline buttons.
 
-<b>NOTE:</b>
+**NOTE:**
 1. Telegram will not allows you to send buttons without any content, so content is mandatory.
 2. BOT supports buttons with any telegram media type.
 3. Buttons should be properly parsed as markdown format
 
-<b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/LazyDeveloper)</code>
+**URL buttons:**
+`[Button Text](buttonurl:https://t.me/rkrishnaa)`
 
-<b>Alert buttons:</b>
-<code>[Button Text](buttonalert:This is an alert message)</code>"""
-    AUTOFILTER_TXT = """Help: <b>Auto Filter</b>
+**Alert buttons:**
+`[Button Text](buttonalert:This is an alert message)`"""
+    AUTOFILTER_TXT = """Help: **Auto Filter**
 
-<b>NOTE:</b>
+**NOTE:**
 1. Make me the admin of your channel if it's private.
 2. Make sure that your channel does not contains camrips, porn and fake files.
 3. Forward the last message to me with quotes.
  I'll add all the files in that channel to my db."""
-    CONNECTION_TXT = """Help: <b>Connections</b>
+    CONNECTION_TXT = """Help: **Connections**
 
 - Used to connect bot to PM for managing filters 
 - it helps to avoid spamming in groups.
 
-<b>NOTE:</b>
+**NOTE:**
 1. Only admins can add a connection.
-2. Send <code>/connect</code> for connecting me to ur PM
+2. Send `/connect` for connecting me to ur PM
 
-<b>Commands and Usage:</b>
-• /connect  - <code>connect a particular chat to your PM</code>
-• /disconnect  - <code>disconnect from a chat</code>
-• /connections - <code>list all your connections</code>"""
-    EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
+**Commands and Usage:**
+• /connect  - `connect a particular chat to your PM`
+• /disconnect  - `disconnect from a chat`
+• /connections - `list of all your connections`"""
+    EXTRAMOD_TXT = """Help: **Extra Modules**
 
-<b>NOTE:</b>
+**NOTE:**
 these are the extra features of Lazy Princess
 
-<b>Commands and Usage:</b>
-• /id - <code>get id of a specified user.</code>
-• /info  - <code>get information about a user.</code>
-• /imdb  - <code>get the film information from IMDb source.</code>
-• /search  - <code>get the film information from various sources.</code>"""
+**Commands and Usage:**
+• /id - `get id of a specified user.`
+• /info  - `get information about a user.`
+• /imdb  - `get the film information from IMDb source.`
+• /search  - `get the film information from various sources.`"""
     ADMIN_TXT = """Help: <b>Admin mods</b>
 
-<b>NOTE:</b>
+**NOTE:**
 This module only works for my admins
 
-<b>Commands and Usage:</b>
-• /logs - <code>to get the rescent errors</code>
-• /stats - <code>to get status of files in db.</code>
-• /delete - <code>to delete a specific file from db.</code>
-• /users - <code>to get list of my users and ids.</code>
-• /chats - <code>to get list of the my chats and ids </code>
-• /leave  - <code>to leave from a chat.</code>
-• /disable  -  <code>do disable a chat.</code>
-• /ban  - <code>to ban a user.</code>
-• /unban  - <code>to unban a user.</code>
-• /channel - <code>to get list of total connected channels</code>
-• /broadcast - <code>to broadcast a message to all users</code>"""
-    STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code>
-★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code>
-★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{}</code>
-★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 𝙼𝚒𝙱
-★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 𝙼𝚒𝙱"""
+**Commands and Usage:**
+• /logs - `to get the rescent errors`
+• /stats - `to get status of files in db.`
+• /delete - `to delete a specific file from db.`
+• /users - `to get list of my users and ids.`
+• /chats - `to get list of the my chats and ids`
+• /leave  - `to leave from a chat`
+• /disable  -  `do disable a chat.`
+• /ban  - `to ban a user.`
+• /unban  - `to unban a user.`
+• /channel - `to get list of total connected channels`
+• /broadcast - `to broadcast a message to all users`"""
+    STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: `{}`
+★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: `{}`
+★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: `{}`
+★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: `{}` MB
+★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: `{}` MB"""
     LOG_TEXT_G = """#NewGroup
-Group = {}(<code>{}</code>)
-Total Members = <code>{}</code>
+Group = {}(`{}`)
+Total Members = `{}`
 Added By - {}
 """
     LOG_TEXT_P = """#NewUser
-ID - <code>{}</code>
+ID - `{}`
 Name - {}
 """
     PROGRESS_BAR = """\n
@@ -173,7 +174,7 @@ Name - {}
 
 ᴀʟʟ ᴛʜᴇ ꜰɪʟᴇꜱ ɪɴ ᴛʜɪꜱ ʙᴏᴛ ᴀʀᴇ ꜰʀᴇᴇʟʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛʜᴇ ɪɴᴛᴇʀɴᴇᴛ ᴏʀ ᴘᴏꜱᴛᴇᴅ ʙʏ ꜱᴏᴍᴇʙᴏᴅʏ ᴇʟꜱᴇ. ᴊᴜꜱᴛ ꜰᴏʀ ᴇᴀꜱʏ ꜱᴇᴀʀᴄʜɪɴɢ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɪɴᴅᴇxɪɴɢ ꜰɪʟᴇꜱ ᴡʜɪᴄʜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ. ᴡᴇ ʀᴇꜱᴘᴇᴄᴛ ᴀʟʟ ᴛʜᴇ ᴄᴏᴘʏʀɪɢʜᴛ ʟᴀᴡꜱ ᴀɴᴅ ᴡᴏʀᴋꜱ ɪɴ ᴄᴏᴍᴘʟɪᴀɴᴄᴇ ᴡɪᴛʜ ᴅᴍᴄᴀ ᴀɴᴅ ᴇᴜᴄᴅ. ɪꜰ ᴀɴʏᴛʜɪɴɢ ɪꜱ ᴀɢᴀɪɴꜱᴛ ʟᴀᴡ ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ꜱᴏ ᴛʜᴀᴛ ɪᴛ ᴄᴀɴ ʙᴇ ʀᴇᴍᴏᴠᴇᴅ ᴀꜱᴀᴘ. ɪᴛ ɪꜱ ꜰᴏʀʙɪᴅᴅᴇɴ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ, ꜱᴛʀᴇᴀᴍ, ʀᴇᴘʀᴏᴅᴜᴄᴇ, ꜱʜᴀʀᴇ ᴏʀ ᴄᴏɴꜱᴜᴍᴇ ᴄᴏɴᴛᴇɴᴛ ᴡɪᴛʜᴏᴜᴛ ᴇxᴘʟɪᴄɪᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ꜰʀᴏᴍ ᴛʜᴇ ᴄᴏɴᴛᴇɴᴛ ᴡɪᴛʜᴏᴜᴛ ᴇxᴘʟɪᴄɪᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ꜰʀᴏᴍ ᴛʜᴇ ᴄᴏɴᴛᴇɴᴛ ᴄʀᴇᴀᴛᴏʀ ᴏʀ ʟᴇɢᴀʟ ᴄᴏᴘʏʀɪɢʜᴛ ʜᴏʟᴅᴇʀ. ɪꜰ ʏᴏᴜ ʙᴇʟɪᴇᴠᴇ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴠɪᴏʟᴀᴛɪɴɢ ʏᴏᴜʀ ɪɴᴛᴇʟʟᴇᴄᴛᴜᴀʟ ᴘʀᴏᴘᴇʀᴛʏ, ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʀᴇꜱᴘᴇᴄᴛɪᴠᴇ ᴄʜᴀɴɴᴇʟꜱ ꜰᴏʀ ʀᴇᴍᴏᴠᴀʟ. ᴛʜᴇ ʙᴏᴛ ᴅᴏᴇꜱ ɴᴏᴛ ᴏᴡɴ ᴀɴʏ ᴏꜰ ᴛʜᴇꜱᴇ ᴄᴏɴᴛᴇɴᴛꜱ, ɪᴛ ᴏɴʟʏ ɪɴᴅᴇx ᴛʜᴇ ꜰɪʟᴇꜱ ꜰʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ."""
 
-    TELEGRAPH_TXT = """ Hᴇʟᴘ : <b>Tᴇʟᴇɢʀᴀᴘʜ</b>
+    TELEGRAPH_TXT = """ Hᴇʟᴘ : `Tᴇʟᴇɢʀᴀᴘʜ`
 
 <b>Nᴏᴛᴇ</b>: ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ɢʀᴏᴜᴘꜱ ᴀɴᴅ ᴘᴍꜱ. ᴀʟꜱᴏ ᴄᴀɴ ʙᴇ ᴜꜱᴇ ʙʏ ᴇᴠᴇʀʏᴏɴᴇ.
 

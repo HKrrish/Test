@@ -1097,23 +1097,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.MARKDOWN
         )
     elif query.data == "admins":
-	if query.from_user.id not in ADMINS:
+        if query.from_user.id not in ADMINS:
             return await query.answer("Only for My Admins!", show_alert=True)
-        buttons = [[
-	    InlineKeyboardButton('Filter', callback_data='filter'),
-	    InlineKeyboardButton('Rename', callback_data='rnhelp')
-	],[
-	    InlineKeyboardButton('Url Upload', callback_data='leech_url_help'),
-	    InlineKeyboardButton('Bot Settings', callback_data='rnhelp')
-	],[
-            InlineKeyboardButton('🚪 Back', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ADMIN_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+            reply_markup=InlineKeyboardMarkup([[
+               InlineKeyboardButton("Filter", callback_data='filter'),
+               InlineKeyboardButton("Rename", callback_data='rnhelp')
+            ],[
+               InlineKeyboardButton('Url Upload', callback_data='leech_url_help'),
+	       InlineKeyboardButton('Bot Settings', callback_data='rnhelp')
+	    ],[
+               InlineKeyboardButton("« Back", callback_data='start')
+               ]]
+            )
+	)
     elif query.data == "filter":
         buttons = [[
 	    InlineKeyboardButton('🚪 Manual Filter', callback_data='manuelfilter'),

@@ -1170,8 +1170,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "leech_url_help":
         buttons = InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton('Open Settings ', callback_data='openSettings')
-            #InlineKeyboardButton('ABOUT DEV ', callback_data='about')
+            InlineKeyboardButton('Open Settings ', callback_data='openSettings'),
+            InlineKeyboardButton('Back', callback_data='admins')
             ],[
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
             ]]

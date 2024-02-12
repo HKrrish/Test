@@ -791,6 +791,9 @@ IMDb Data:
 ~ just copy the above and paste it below. ~ 
 <b>Uploaded By</b> : @Radhekrishn_bot !!
 """
+    SETTINGS_TXT = """Settings"""
+    CHANNEL_TXT = """Channels"""
+    RENAME_TXT = """Rename Help"""
     LOGO = """
  ____  ___    ____   __  ____  ____ 
 (_  _)/ __)  (  _ \ /  \(_  _)(__  )

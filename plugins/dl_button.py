@@ -171,7 +171,7 @@ async def ddl_call_back(client, query):
                     chat_id=query.message.chat.id,
                     document=download_directory,
                     thumb=thumbnail,
-                    caption=f"**{custom_file_name}**\n\n🧬Data costs: `{sizee}`",
+                    caption=f"**{custom_file_name}**\n\n🧬 **Data costs** : `{sizee}`",
                     reply_to_message_id=message_idx,
                     progress=progress_for_pyrogram,
                     progress_args=(
@@ -193,7 +193,7 @@ async def ddl_call_back(client, query):
                  await client.send_video(
                     chat_id=query.message.chat.id,
                     video=download_directory,
-                    caption=f"**{custom_file_name}**\n\n🧬Data costs: `{sizee}`",
+                    caption=f"**{custom_file_name}**\n\n🧬 **Data costs:** `{sizee}`",
                     duration=duration,
                     width=width,
                     height=height,
@@ -220,7 +220,7 @@ async def ddl_call_back(client, query):
                 await client.send_audio(
                     chat_id=query.message.chat.id,
                     audio=download_directory,
-                    caption=f"**{custom_file_name}**\n\n🧬Data costs: `{sizee}`",
+                    caption=f"**{custom_file_name}**\n\n🧬 **Data costs:** `{sizee}`",
                     parse_mode=enums.ParseMode.HTML,
                     duration=duration,
                     thumb=thumbnail,
@@ -316,7 +316,7 @@ async def download_coroutine(bot, session, custom_file_name, url, file_name, cha
                     xxLAZY_BAPUXX_estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
                     template_name = custom_file_name if custom_file_name else "**⚠ You haven't given any custom name...**"
 
-                    xLDx = f"**Processing...**\n\n**░░✩ 📂 **Original FileName** ✩ **\n<code>{xLAZY_BAAPUx_u_name}</code>\n\n**░░✩ 🖊️ **New FileName**✩ **\n<code>{template_name}</code>\n\n ☼﹍︿﹍ⲯ﹍︿﹍﹍︿﹍ⲯ﹍︿﹍☼\n⚡️ **Done:{tp}**%| 🧬 Size: {xxLAZY_BAPUXX_total_size}"
+                    xLDx = f"**Processing...**\n\n**░░✩ 📂 **Original FileName** ✩ **\n<code>{xLAZY_BAAPUx_u_name}</code>\n\n**░░✩ 🖊️ **New FileName** ✩ **\n<code>{template_name}</code>\n\n ☼﹍︿﹍ⲯ﹍︿﹍﹍︿﹍ⲯ﹍︿﹍☼\n⚡️ **Done:{tp}**%| 🧬 Size: {xxLAZY_BAPUXX_total_size}"
                     progress = "{0}{1}".format(
                         ''.join(["█" for i in range(math.floor(percentage / 5))]),
                         ''.join(["░" for i in range(20 - math.floor(percentage / 5))]))

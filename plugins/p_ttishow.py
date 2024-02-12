@@ -37,7 +37,7 @@ async def save_group(bot, message):
             return
         buttons = [[
             InlineKeyboardButton('🤥 Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('🔔 Updates', url='https://t.me/LazyDeveloper')
+            InlineKeyboardButton('🔔 Updates', url='https://t.me/Radhakriishn')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -68,8 +68,20 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply(f"<b>Hey , {u.mention}, Welcome to {message.chat.title}</b>")
-
+                temp.MELCOW['welcome'] = await message.reply_photo(
+                                                 photo=random.choice(PICS),
+                                                 caption='Hᴇʟʟᴏ {} 👋, Wᴇʟᴄᴏᴍᴇ Tᴏ "**{}**" Gʀᴏᴜᴘ. ❤️'.format(message.from_user.mention, message.chat.title),
+                                                 reply_markup=InlineKeyboardMarkup(
+                                                                         [[
+                    InlineKeyboardButton('Help', url="https://t.me/RKrishnaBot?start=help")
+                ]]
+                                                 )
+                )
+                
+        #if settings["auto_delete"]:
+            await asyncio.sleep(300)
+            await (temp.MELCOW['welcome']).delete()
+            
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
     if len(message.command) == 1:

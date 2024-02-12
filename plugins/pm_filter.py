@@ -103,13 +103,13 @@ async def doc(bot, update):
         new_filename = new_name.split(":-")[1]
         file = update.message.reply_to_message
         file_path = f"downloads/{new_filename}"
-        ms = await update.message.edit("\n༻☬ད 𝘽𝙪𝙞𝙡𝙙𝙞𝙣𝙜 𝙇𝙖𝙯𝙮 𝙈𝙚𝙩𝙖𝘿𝙖𝙩𝙖...")
+        ms = await update.message.edit("\nTrying to Download...")
         c_time = time.time()
         try:
             path = await bot.download_media(
                     message=file,
                     progress=progress_for_pyrogram,
-                    progress_args=("**\n  ღ♡ ꜰɪʟᴇ ᴜɴᴅᴇʀ ᴄᴏɴꜱᴛʀᴜᴄᴛɪᴏɴ... ♡♪**", ms, c_time))
+                    progress_args=("**\nDownloading....**", ms, c_time))
         except Exception as e:
             await ms.edit(e)
             return 
@@ -147,7 +147,7 @@ async def doc(bot, update):
             img = Image.open(ph_path)
             img.resize((320, 320))
             img.save(ph_path, "JPEG")
-        await ms.edit("三 𝘗𝘳𝘦𝘱𝘢𝘳𝘪𝘯𝘨 𝘵𝘰 𝘳𝘦𝘤𝘦𝘪𝘷𝘦 𝘓𝘢𝘻𝘺 𝘧𝘪𝘭𝘦...︻デ═一")
+        await ms.edit("三 Trying to Upload...")
         c_time = time.time() 
         try:
            if type == "document":
@@ -157,7 +157,7 @@ async def doc(bot, update):
                        thumb=ph_path, 
                        caption=caption, 
                        progress=progress_for_pyrogram,
-                       progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ ʟᴀᴢʏ ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time))
+                       progress_args=( "**Uploading as doc...**",  ms, c_time))
            elif type == "video": 
                await bot.send_video(
 	            update.message.chat.id,
@@ -166,7 +166,7 @@ async def doc(bot, update):
 	            thumb=ph_path,
 	            duration=duration,
 	            progress=progress_for_pyrogram,
-	            progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ ʟᴀᴢʏ ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time))
+	            progress_args=( "**Uploading as video...**",  ms, c_time))
            elif type == "audio": 
                await bot.send_audio(
 	            update.message.chat.id,
@@ -175,7 +175,7 @@ async def doc(bot, update):
 	            thumb=ph_path,
 	            duration=duration,
 	            progress=progress_for_pyrogram,
-	            progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ ʟᴀᴢʏ ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time   )) 
+	            progress_args=( "**Uploading as audio...**",  ms, c_time   )) 
         except Exception as e: 
             await ms.edit(f" Erro {e}") 
             os.remove(file_path)
@@ -196,7 +196,7 @@ async def next_page(bot, query):
     print(f"REQ => {req}")
     if int(req) not in [query.from_user.id, 0]:
         return await query.answer(
-                        f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
+                        f"⚠️ Hello {query.from_user.first_name},\nNot yours!",
                         show_alert=True,
                     )
     try:
@@ -375,14 +375,14 @@ async def next_page(bot, query):
                     for file in files
                 ]
 
+    #btn.insert(0,
+    #    [ 
+    #    InlineKeyboardButton("Languages", callback_data=f"languages#{key}"),
+    #    ] 
+    #)
     btn.insert(0,
         [ 
-        InlineKeyboardButton("Languages", callback_data=f"languages#{key}"),
-        ] 
-    )
-    btn.insert(0,
-        [ 
-	    InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://telegram.me/real_MoviesAdda3/18'),
+	    InlineKeyboardButton(text="⚡ Join Update Channel ⚡", url='https://t.me/Radhakriishn'),
         ] 
     )
 
@@ -432,7 +432,7 @@ async def advantage_spoll_choker(bot, query):
     movie = movies[(int(movie_))]
     chat_id = query.message.chat.id
 
-    await query.answer('Checking for Movie in database...')
+    await query.answer('Checking for query in database...')
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results_badAss_LazyDeveloperr(chat_id, movie, offset=0, filter=True)
@@ -440,7 +440,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('😒 currently unavailable ! we are really sorry for inconvenience !\n Have patience ! our great admins will upload it as soon as possible !')
+            k = await query.message.edit('**Currently unavailable !**\nwe are really sorry for inconvenience!\nHave patience ! our admins will upload it as soon as possible !')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -728,20 +728,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('♥️ Love @LazyDeveloper ♥️')
+                    return await query.answer('Maintained By @Sandip10x')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
                     quote=True
                 )
-                return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+                return await query.answer('Maintained By @Sandip10x')
 
         elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
             grp_id = query.message.chat.id
             title = query.message.chat.title
 
         else:
-            return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+            return await query.answer('Maintained By @Sandip10x')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
@@ -766,7 +766,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("That's not for you sona!", show_alert=True)
+                await query.answer("That's not for you!", show_alert=True)
     elif "=" in query.data:
         try:
             await youtube_dl_call_back(client, query)
@@ -805,7 +805,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        return await query.answer('Maintained By @Sandip10x')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -826,7 +826,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text('Some error occurred!!', parse_mode=enums.ParseMode.MARKDOWN)
-        return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        return await query.answer('Maintained By @Sandip10x')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -849,7 +849,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        return await query.answer('Maintained By @Sandip10x')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -867,7 +867,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        return await query.answer('Maintained By @Sandip10x')
     elif query.data == "backcb":
         await query.answer()
 
@@ -878,7 +878,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+            return await query.answer('Maintained By @Sandip10x')
         buttons = []
         for groupid in groupids:
             try:
@@ -950,16 +950,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup=keyboard,
                     protect_content=True if ident == "filep" else False 
                 )
-                await query.answer('Requested file has been sent to you privately. Check PM sweetheart ❤', show_alert=True)
+                await query.answer('Requested file has been sent to you privately. Check PM! ❤', show_alert=True)
         except UserIsBlocked:
-            await query.answer('☣Unblock the bot sweetie!', show_alert=True)
+            await query.answer('🙄 Unblock the bot!', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("Mere saamne jyada smart nhi banne ka sona 😒", show_alert=True)
+            await query.answer("Don't be Oversmart!", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
@@ -997,16 +997,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕↖️ Add Me To Your Groups ↗️➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🧞‍♀️ Search 🧐', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/LazyDeveloper')
+            #InlineKeyboardButton('🧞‍♀️ Search 🧐', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🔔 Updates 🤖', url='https://t.me/Radhakriishn')
         ], [
             InlineKeyboardButton('🙆🏻 Help 🦾', callback_data='help'),
-            InlineKeyboardButton('♥️ About ♥️', callback_data='about')
+            InlineKeyboardButton('♥️ About Us ♥️', callback_data='about')
         ],[
-            InlineKeyboardButton('🔗 More Help ', callback_data='leech_url_help'),
+            InlineKeyboardButton('Extra', callback_data='extra'),
             InlineKeyboardButton('⚙ Open Settings ', callback_data='openSettings'),
-        ],[
-            InlineKeyboardButton('⪦ Learn BOT Making ⪧', url='https://youtube.com/@Lazydeveloperr')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1014,7 +1012,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-        await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        await query.answer('Maintained By @Sandip10x')
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
@@ -3010,7 +3008,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('♥️ Thank You LazyDeveloper ♥️')
+    await query.answer('Maintained By @Sandip10x')
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -3199,14 +3197,14 @@ async def auto_filter(client, msg, spoll=False):
                     for file in files
                 ]
     
+    #btn.insert(0,
+    #    [ 
+    #    InlineKeyboardButton(" 𝐅𝐈𝐋𝐓𝐄𝐑 𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄 ʕʘ̅͜ʘ̅ʔ", callback_data=f"languages#{key}"),
+    #    ] 
+    #)
     btn.insert(0,
         [ 
-        InlineKeyboardButton(" 𝐅𝐈𝐋𝐓𝐄𝐑 𝐋𝐀𝐍𝐆𝐔𝐀𝐆𝐄 ʕʘ̅͜ʘ̅ʔ", callback_data=f"languages#{key}"),
-        ] 
-    )
-    btn.insert(0,
-        [ 
-	    InlineKeyboardButton(text="⚡ʜᴏᴡ to ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://telegram.me/real_MoviesAdda3/18'),
+	    InlineKeyboardButton(text="⚡ Join Update Channel ⚡", url='https://t.me/Radhakriishn'),
         ] 
     )
 
@@ -3271,7 +3269,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"⚡Baby, Here is what i found for your query {search}"
+        cap = f"⚡ Here is what i found for your query {search}"
     if imdb and imdb.get('poster'):
         try:
             z = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -3314,7 +3312,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply("I couldn't find anything in that name.")
         await asyncio.sleep(10)
         await k.delete()
         return
@@ -3343,7 +3341,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("Hey Sona! The requested content is currently unavailable in our database, have some patience 🙂 - our great admin will upload it as soon as possible \n\n               **or**\n\nDiscuss issue with admin here 👉  <a href='https://t.me/Discusss_Here'>Discuss Here</a> ♥️ ")
+        k = await msg.reply("The requested content is currently unavailable in our database, have some patience 🙂 - our admin will upload it as soon as possible.")
         await asyncio.sleep(10)
         await k.delete()
         return
@@ -3355,7 +3353,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("Hey sona, did you checked your spelling properly, here are some suggestions for you, please check if your requested content match anyone of these following suggestions...\n\n                 **or**\n\nDiscuss issue with admin here 👉 <a href='https://t.me/Discusss_Here'>Discuss Here</a> ♥️ ",
+    await msg.reply("Did you checked your spelling properly, here are some suggestions for you, please check /serials to understand how to get episodes.",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 

@@ -59,6 +59,7 @@ If you need any help, you can join our Support group.
 **Upload with Rename**
 **Format:** paste_url_here | filename.mp4
 
+**Before Uploading Set Thumbnail!**
 """
     ABOUT_TXT = """
 --> **My Name** : {}
@@ -754,9 +755,28 @@ IMDb Data:
 ~ just copy the above and paste it below. ~ 
 <b>Uploaded By</b> : @Radhekrishn_bot !!
 """
-    SETTINGS_TXT = """Settings"""
-    CHANNEL_TXT = """Channels"""
-    RENAME_TXT = """Rename Help"""
+    SETTINGS_TXT = """
+**--Settings--**
+/settings : You can setup your file get settings in group by using this command. ✨
+"""
+    CHANNEL_TXT = """**--Channels--:-**
+    
+    1️⃣ **RadhaKrishn**: https://t.me/+CY8cW0O-RUBiNjRl
+    
+    2️⃣ **Mahabharat**: https://t.me/+x8U8Ko9px0I2OGU1
+    
+    3️⃣ **Siya Ke Ram**: https://t.me/+fOEwUzMWvfIxODU1
+    
+    4️⃣ **Devo Ke Dev Mahadev**: https://t.me/+T7yoLFaV_aI3ODdl
+"""
+    RENAME_TXT = """
+**--File Rename Module--**
+
+**Thumbnail Setting**
+/st - set thumbnail for Renaming files.
+/vt - view thumbnail.
+/dt - delete thumbnail 
+"""
     LOGO = """
  ____  ___    ____   __  ____  ____ 
 (_  _)/ __)  (  _ \ /  \(_  _)(__  )

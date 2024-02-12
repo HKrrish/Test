@@ -81,10 +81,10 @@ BUTTONS2 = {}
 
 @Client.on_message(filters.text & filters.incoming)
 async def give_filter(client, message):
-    if message.from_user.id not in ADMINS: 
-        k = await manual_filters(client, message)
-        if k == False:
-            await auto_filter(client, message)
+    #if message.from_user.id not in ADMINS: 
+    k = await manual_filters(client, message)
+    if k == False:
+        await auto_filter(client, message)
 		
 @Client.on_callback_query(filters.regex('rename'))
 async def rename(bot,update):
@@ -3060,10 +3060,10 @@ async def auto_filter(client, msg, spoll=False):
                                                                                                                                         [InlineKeyboardButton("❌Reject Req", callback_data=f"notify_user_req_rejected:{user_id}:{requested_movie}")]
                                                                                                                                         ]))
                 
-                l = await message.reply_text(text=f"△ Hey, `{message.from_user.first_name}` 😎,\n\n** Please Check Your Spelling Correct?!")
+                #l = await message.reply_text(text=f"△ Hey, `{message.from_user.first_name}` 😎,\n\n** Please Check Your Spelling Correct?!")
                                                                                                        #reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  ᗩᗪᗪ ʍɛ 2 ᑌᖇ Ǥᖇᗝᑌᑭ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Dev Ch- ✪", url=f"https://t.me/{DEV_CHANNEL_USRNM}"), InlineKeyboardButton("✪ ＹＴ ✪", url=f"https://youtube.com/@{LAZY_YT_HANDLE}"), InlineKeyboardButton("✪ Main Ch- ✪", url=f"https://t.me/{MAIN_CHANNEL_USRNM}")],[InlineKeyboardButton("╚»♥️ Thank You ♥️«╝", callback_data="close_data")]]))
-                await asyncio.sleep(5)
-                await l.delete()    
+                #await asyncio.sleep(5)
+                #await l.delete()    
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
                 else:

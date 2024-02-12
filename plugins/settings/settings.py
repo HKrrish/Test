@@ -18,13 +18,13 @@ async def OpenSettings(m: "types.Message"):
     apply_caption = user_data.get("apply_caption", True)
     thumbnail = user_data.get("thumbnail", None)
     buttons_markup = [
-        [types.InlineKeyboardButton(f"ᴜᴘʟᴏᴀᴅ ᴀs {'🎥 ᴠɪᴅᴇᴏ' if upload_as_doc else '🗃️ ғɪʟᴇ'}",
+        [types.InlineKeyboardButton(f"Upload as {'🎥 ᴠɪᴅᴇᴏ' if upload_as_doc else '🗃️ File'}",
                                     callback_data="triggerUploadMode")],
-        [types.InlineKeyboardButton(f"{'ᴄʜᴀɴɢᴇ' if thumbnail else '🌃 sᴇᴛ'} ᴛʜᴜᴍʙɴᴀɪʟ",
+        [types.InlineKeyboardButton(f"{'Change' if thumbnail else '🌃 Set'} Thumbnail",
                                     callback_data="setThumbnail")]
     ]
     if thumbnail:
-        buttons_markup.append([types.InlineKeyboardButton("🌆 sʜᴏᴡ ᴛʜᴜᴍʙɴᴀɪʟ",
+        buttons_markup.append([types.InlineKeyboardButton("🌆 Show Thumbnail",
                                                           callback_data="showThumbnail")])
     buttons_markup.append([types.InlineKeyboardButton("👈 HOME",
                                                       callback_data="start"),
@@ -33,7 +33,7 @@ async def OpenSettings(m: "types.Message"):
 
     try:
         await m.edit(
-            text="**ʜᴇʀᴇ ʏᴏᴜ ᴄᴀɴ sᴇᴛᴜᴘ ʏᴏᴜʀ sᴇᴛᴛɪɴɢs**",
+            text="**Here you can setup your leech_url setting.**",
             reply_markup=types.InlineKeyboardMarkup(buttons_markup),
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.MARKDOWN
